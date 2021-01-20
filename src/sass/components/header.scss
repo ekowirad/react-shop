@@ -8,9 +8,9 @@
         align-items: center;
         justify-content: space-between;
         margin: 0 auto;
-        padding: 0 $space-16;
         height: 100%;
-        max-width: 1684px;
+        padding:0 $space-24;
+        max-width: 1676px;
         background-color: white;
     }
 
@@ -35,4 +35,5 @@
             }
         }
     }
+
 }

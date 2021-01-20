@@ -1,0 +1,10 @@
+.cart {
+    display:none;
+    width: 350px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    z-index: 5;
+}

@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function button(props) {
+export default function button({text, ...props}) {
     return (
-        <button className="button">
-            <div className="text"> {props.text}</div>
+        <button className="button" {...props}>
+            <div className="text"> {text}</div>
             <div className="bg"> </div>
         </button>
     )

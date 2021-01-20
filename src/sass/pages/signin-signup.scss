@@ -1,0 +1,60 @@
+.fluid-container {
+    @include fluid-container;
+    align-items: center;
+    justify-content: space-between;
+
+    .text-section {
+        flex:1 0 70%;
+        &>h1 {
+            font-size: 50px;
+        }
+
+        &>p {
+            font-size: $text-24;
+            animation: appear-text 0.5s forwards;
+          
+        }
+    }
+
+    .form-section {
+        @include card;
+        justify-content: space-around;
+        min-height: 800px;
+        flex:1 0 25%;
+
+        .inner-top {
+            & .caption-form{
+                font-size: $text-12;
+                margin-top: $space-16;
+
+                & span {
+                    font-weight: bold;
+                    color: black;
+                }
+
+            }
+        }
+
+        .inner-bot {
+            display: flex;
+            height: 80px;
+            flex-direction: column;
+            justify-content: space-between;
+
+        }
+
+
+    }
+
+}
+
+@keyframes appear-text {
+    0% {
+      opacity: 0;
+      transform: translateX(0px) translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0px) translateY(0px);
+    }
+  }

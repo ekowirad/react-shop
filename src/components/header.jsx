@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../assets/crown.svg';
 import Button from './button.jsx'
+import Cart from './cart';
+import CartIcon from './cart-icon';
 import MenuItem from './nav-item'
 
 export default function header() {
@@ -26,8 +28,8 @@ export default function header() {
                 </div>
                 <ul className="menu">
                     {
-                        nav_items.map(item => {
-                            return <li className="item">
+                        nav_items.map((item, i) => {
+                            return <li className="item" key={i}>
                                 <Link to={item.path}>
                                     <MenuItem text={item.name}></MenuItem>
                                 </Link>
@@ -35,12 +37,16 @@ export default function header() {
                         })
                     }
                     <li className="item">
-                        <Link to="/login">
-                            <Button text="Login"></Button>
+                        <Link to="/signin">
+                            <Button text="Sign in"></Button>
                         </Link>
+                    </li>
+                    <li className="item">
+                        <CartIcon></CartIcon>
                     </li>
                 </ul>
             </div>
+            <Cart></Cart>
         </header>
     )
 }

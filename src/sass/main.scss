@@ -2,8 +2,18 @@
 @import "abstracts/mixins";
 @import "abstracts/variables";
 
+@import "layouts/container.scss";
+@import "layouts/row-col.scss";
 
 @import "components/button.scss";
 @import "components/header.scss";
 @import "components/nav-item.scss";
+@import "components/banner-home.scss";
+@import "components/cart-icon.scss";
+@import "components/cart.scss";
+@import "components/form-input.scss";
+@import "components/spinner.scss";
+
+@import "pages/home.scss";
+@import "pages/signin-signup.scss";
 

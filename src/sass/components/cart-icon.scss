@@ -1,0 +1,23 @@
+.icon-container {
+    width: 30px;
+    height: 30px;
+    position: relative;
+
+    .icon {
+        height: 100%;
+        width: 100%;
+    }
+
+    .counter {
+        position: absolute;
+        top:0;
+        right: 0;
+        transform: translateX(30%);
+        font-size: $text-8;
+        border-radius: $radius-3;
+        padding: $space-3 $space-5;
+        background-color: crimson;
+        color: white;
+    }
+
+}

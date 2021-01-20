@@ -1,0 +1,10 @@
+.main-container {
+    width: 100%;
+    position: relative;
+
+    .inner-container {
+        margin: 0 auto;
+        padding: $space-24;
+        max-width: 1676px;
+    }
+}
