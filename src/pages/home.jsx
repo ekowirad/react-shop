@@ -12,7 +12,9 @@ export default function HomePage() {
                     DIRECTORY_DATA.map((item, i) => {
                         return <BannerHome item={item} key={i}></BannerHome>
                     })
+                    
                 }
+                
             </div>
         </div>
     )

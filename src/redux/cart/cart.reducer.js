@@ -1,7 +1,7 @@
 import { cartType } from "./cart.type";
 
 const INITIAL_STATE = {
-    hidden: false
+  hidden: null
 };
 
 export const cartReducer = (state = INITIAL_STATE, action) => {
@@ -9,7 +9,7 @@ export const cartReducer = (state = INITIAL_STATE, action) => {
     case cartType.TOGGLE_CART:
       return {
         ...state,
-        hidden: !state.hidden
+        hidden: action.payload != undefined ? action.payload : state.hidden
       };
     default:
       return state;

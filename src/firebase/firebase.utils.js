@@ -1,7 +1,7 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 import 'firebase/auth'
-import {docType} from './doc-type'
+import { docType } from './doc-type'
 
 const config = {
     apiKey: "AIzaSyDpkrDqzISkQoyiKfsXyqqtbl7VJ5BW6aQ",
@@ -39,6 +39,25 @@ export const storeNewUser = async (userData) => {
     }
 
     return userRef;
+}
+
+export const setDocFirestore = async (data) => {
+    const dataRef = firestore.collection("products")
+
+    try {
+        console.log("alo");
+        const promises = data.map(async element => {
+            await dataRef.add(element)
+            console.log("Success set data ", element.title);
+        });
+        const datas = await Promise.all(promises)
+
+        console.log("Success set data!!!", datas);
+    } catch (e) {
+        console.log(e.message);
+    }
+
+
 }
 
 const provider = new firebase.auth.GoogleAuthProvider();

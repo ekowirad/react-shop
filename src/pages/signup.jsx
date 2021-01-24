@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import FormInput from '../components/form-input'
 import Button from '../components/button'
 import SigninSignupWrap from '../components/signin-signup'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { auth, storeNewUser } from '../firebase/firebase.utils'
 import Spinner from '../components/spinner'
 
@@ -18,6 +18,7 @@ function SignupPage() {
     }
     const [data, setData] = useState(initData)
     const [load, setLoad] = useState(false)
+    const history = useHistory()
 
     /**
      * FUNCTION SECTION 
@@ -40,6 +41,7 @@ function SignupPage() {
             await storeNewUser({ ...user, displayName: data.displayName })
             setData(initData)
             setLoad(false)
+            history.push("/")
 
         } catch (error) {
             setLoad(false)

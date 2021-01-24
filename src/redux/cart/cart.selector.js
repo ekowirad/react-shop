@@ -1,1 +1,1 @@
-export const cartHidden = state => state.cart
+export const cartState = state => state.cart

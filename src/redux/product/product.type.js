@@ -1,0 +1,5 @@
+export const productType = {
+    PRODUCT_START : 'PRODUCT_START',
+    PRODUCT_SUCCESS : 'PRODUCT_SUCCESS',
+    PRODUCT_FAIL : 'PRODUCT_FAIL'
+}

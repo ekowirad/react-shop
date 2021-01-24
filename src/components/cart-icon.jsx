@@ -7,7 +7,7 @@ export default function CartIcon() {
     const dispatch = useDispatch()
     
     return (
-        <div onClick={() => {dispatch(toggleHidden())}} className="icon-container">
+        <div onClick={() => {dispatch(toggleHidden(false))}} className="icon-container">
             <BagIcon className="icon"></BagIcon>
             <div className="counter">0</div>
         </div>

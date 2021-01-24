@@ -1,10 +1,65 @@
 .cart {
-    display:none;
     width: 350px;
-    height: 100vh;
-    position: absolute;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    flex-flow: column;
+    transform: translateX(100%);
+    justify-content: space-between;
     top: 0;
     right: 0;
-    background-color: red;
-    z-index: 5;
+    z-index: 20;
+    background-color: white;
+    box-shadow: $box-shadow;
+
+    .cart-content{
+        margin: $space-16;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            background: transparent;
+            /* makescrollbar transparent */
+        }
+
+    }
+
+    .cart-bottom {
+        display: flex;
+        flex-direction: column;
+        margin: $space-16;
+    }
+
+    &--hide {
+        animation: anim-hide 0.7s forwards;
+        animation-timing-function: $beizer;
+    }
+
+    &--show {
+        animation: anim-show 0.7s forwards;
+        animation-timing-function: $beizer;
+
+
+    }
+
+    @keyframes anim-hide {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(100%);
+        }
+
+    }
+
+    @keyframes anim-show {
+        0% {
+            transform: translateX(100%);
+        }
+
+        100% {
+            transform: translateX(0%);
+        }
+
+    }
 }

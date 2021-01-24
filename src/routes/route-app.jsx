@@ -16,33 +16,35 @@ const routes = [
     {
         path: '/shop',
         component: shop,
-        exact: true,
+        exact: false,
     },
     {
         path: '/contact',
         component: contact,
-        exact: true,
+        exact: false,
     },
     {
         path: '/signin',
         component: SigninPage,
-        exact: true,
+        exact: false,
     },
     {
         path: '/signup',
         component: SignupPage,
-        exact: true,
+        exact: false,
     },
 
 ]
 
 export default function routeApp(props) {
     return (
-        routes.map((route, i) => {
-            return <Switch key={i} >
-                <Route {...route}>
-                </Route>
-            </Switch>
-        })
+        <Switch>
+            {
+                routes.map((route, i) => {
+                    return <Route key={i} {...route}>
+                    </Route>
+                })
+            }
+        </Switch>
     )
 }

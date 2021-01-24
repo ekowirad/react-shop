@@ -1,5 +1,6 @@
 import { cartType } from "./cart.type";
 
-export const toggleHidden = () => ({
-    type: cartType.TOGGLE_CART
+export const toggleHidden = (bool) => ({
+    type: cartType.TOGGLE_CART,
+    payload: bool
 })

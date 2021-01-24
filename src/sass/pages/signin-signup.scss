@@ -4,15 +4,14 @@
     justify-content: space-between;
 
     .text-section {
-        flex:1 0 70%;
+        flex: 1 0 70%;
+
         &>h1 {
-            font-size: 50px;
+            font-size: 60px;
         }
 
         &>p {
             font-size: $text-24;
-            animation: appear-text 0.5s forwards;
-          
         }
     }
 
@@ -20,10 +19,16 @@
         @include card;
         justify-content: space-around;
         min-height: 800px;
-        flex:1 0 25%;
+        flex: 1 0 25%;
 
         .inner-top {
-            & .caption-form{
+
+            &>h1 {
+                font-size: $text-36;
+                animation: appear-text 0.5s forwards;
+            }
+
+            & .caption-form {
                 font-size: $text-12;
                 margin-top: $space-16;
 
@@ -50,11 +55,12 @@
 
 @keyframes appear-text {
     0% {
-      opacity: 0;
-      transform: translateX(0px) translateY(-50px);
+        opacity: 0;
+        transform: translateX(0px) translateY(-50px);
     }
+
     100% {
-      opacity: 1;
-      transform: translateX(0px) translateY(0px);
+        opacity: 1;
+        transform: translateX(0px) translateY(0px);
     }
-  }
+}

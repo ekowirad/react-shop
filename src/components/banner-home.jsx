@@ -1,9 +1,12 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 
-export default function bannerHome({ item }) {
+export default function BannerHome({ item }) {
+    const history = useHistory()
+    
     return (
         <div className="banner" onClick={() => {
-            console.log("HEELLP")
+            history.push(item.linkTo)
         }}>
             <div className="text">
                 {item.title}

@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react'
 import FormInput from '../components/form-input'
 import Button from '../components/button'
 import SigninSignupWrap from '../components/signin-signup'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { auth, googleSignin, storeNewUser } from '../firebase/firebase.utils'
 import Spinner from '../components/spinner'
+import { useDispatch } from 'react-redux'
+import { setCurrentUser } from '../redux/user/user.action'
 
 function SigninPage() {
     /**
@@ -14,6 +16,8 @@ function SigninPage() {
         email: '',
         password: '',
     }
+    const dispatch = useDispatch();
+    const history = useHistory()
     const [data, setData] = useState(initData)
     const [load, setLoad] = useState(false)
 
@@ -30,8 +34,11 @@ function SigninPage() {
 
         setLoad(true)
         try {
-            await auth.signInWithEmailAndPassword(email, password)
+            const { user } = await auth.signInWithEmailAndPassword(email, password)
+            dispatch(setCurrentUser(user))
+            setData(initData)
             setLoad(false)
+            history.push("/")
 
         } catch (e) {
             setLoad(false)
@@ -48,7 +55,10 @@ function SigninPage() {
         try {
             const { user } = await googleSignin()
             await storeNewUser(user)
+            dispatch(setCurrentUser(user))
+            setData(initData)
             setLoad(false)
+            history.push("/")
 
         } catch (e) {
             setLoad(false)
