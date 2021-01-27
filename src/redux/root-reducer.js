@@ -8,7 +8,7 @@ import { productReducer } from "./product/product.reducer";
 const presistConfig = {
     key: 'root',
     storage,
-    whitelist: ['user']
+    whitelist: ['user', 'cart']
 }
 export const rootReducer = persistReducer(
     presistConfig,

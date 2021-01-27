@@ -1,0 +1,38 @@
+.fluid-container {
+    @include fluid-container;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    & > h1 {
+        flex: 1 0 100%;
+        margin-bottom: $space-16;
+        opacity: 0.5;
+    }
+
+    .checkout-list {
+        flex: 1 0 70%;
+        display: flex;
+        padding-right: $space-16;
+        flex-direction: column;
+
+        & > .spinner-overlay {
+            height: 10vh;
+        }
+    }
+
+
+    .checkout-total {
+        @include card;
+        flex: 1 0 30%;
+        display: flex;
+        flex-direction: column;
+
+        & > .checkout-price{
+            display: flex;
+            justify-content: space-between;
+        }
+
+    }
+
+
+}

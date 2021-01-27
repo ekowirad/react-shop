@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../assets/crown.svg';
 import { auth } from '../firebase/firebase.utils';
 import { removeCurrentUser } from '../redux/user/user.action';
+import { cartClear } from '../redux/cart/cart.action';
 import { userState } from '../redux/user/user.selector';
 import Button from './button.jsx'
 import Cart from './cart';
@@ -25,6 +26,7 @@ export default function Header() {
     const dispatch = useDispatch()
 
     const handleSignin = () => {
+        dispatch(cartClear())
         dispatch(removeCurrentUser())
     }
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import SigninSignupWrap from '../components/signin-signup'
+import Checkout from '../pages/checkout'
 import contact from '../pages/contact'
 import home from '../pages/home'
 import shop from '../pages/shop'
@@ -31,6 +32,11 @@ const routes = [
     {
         path: '/signup',
         component: SignupPage,
+        exact: false,
+    },
+    {
+        path: '/checkout',
+        component: Checkout,
         exact: false,
     },
 

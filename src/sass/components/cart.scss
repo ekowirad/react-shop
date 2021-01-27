@@ -12,13 +12,25 @@
     background-color: white;
     box-shadow: $box-shadow;
 
+   
+
     .cart-content{
         margin: $space-16;
         overflow-y: scroll;
+        & > .title{
+            display: flex;
+            align-items: center;
+            margin-bottom: $space-16;
+            justify-content: space-between; 
 
+            & > .icon-wrap{
+                height: 15px;
+                width: 15px;
+            }
+    
+        }
         &::-webkit-scrollbar {
-            background: transparent;
-            /* makescrollbar transparent */
+            display: none;
         }
 
     }
@@ -27,6 +39,10 @@
         display: flex;
         flex-direction: column;
         margin: $space-16;
+
+        .button{
+            width: 100%;
+        }
     }
 
     &--hide {

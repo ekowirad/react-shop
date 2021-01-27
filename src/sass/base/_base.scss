@@ -14,4 +14,9 @@ body {
         text-decoration: none;
 
     }
+
+    & hr {
+        border-top: 1px solid lightgray;
+        margin: $space-16  0;
+    }
 }

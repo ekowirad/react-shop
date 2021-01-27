@@ -1,0 +1,25 @@
+.cart-item {
+    display: flex;
+    flex-direction: row;
+    padding: $space-16 0;
+    align-items: center;
+
+    .cart-item-img {
+        width: 8vh;
+        height: 8vh;
+        border-radius: $radius-5;
+        overflow: hidden;
+
+        &>img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .cart-item-caption {
+        margin-left: $space-16;
+        display: flex;
+        flex-direction: column;
+    }
+}

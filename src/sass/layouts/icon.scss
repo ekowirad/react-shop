@@ -1,0 +1,10 @@
+.icon-wrap {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+
+    &>.icon {
+        height: 100%;
+        width: 100%;
+    }
+}

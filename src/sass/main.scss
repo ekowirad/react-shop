@@ -1,9 +1,10 @@
-@import "base/base";
 @import "abstracts/mixins";
 @import "abstracts/variables";
+@import "base/base";
 
 @import "layouts/container.scss";
 @import "layouts/row-col.scss";
+@import "layouts/icon.scss";
 
 @import "components/button.scss";
 @import "components/header.scss";
@@ -11,10 +12,13 @@
 @import "components/banner-home.scss";
 @import "components/cart-icon.scss";
 @import "components/cart.scss";
+@import "components/cart-item.scss";
 @import "components/form-input.scss";
 @import "components/product.scss";
 @import "components/spinner.scss";
+@import "components/checkout-item.scss";
 
 @import "pages/home.scss";
 @import "pages/signin-signup.scss";
+@import "pages/checkout.scss";
 
