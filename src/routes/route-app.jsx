@@ -19,11 +19,11 @@ const routes = [
         component: shop,
         exact: false,
     },
-    {
-        path: '/contact',
-        component: contact,
-        exact: false,
-    },
+    // {
+    //     path: '/contact',
+    //     component: contact,
+    //     exact: false,
+    // },
     {
         path: '/signin',
         component: SigninPage,

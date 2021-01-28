@@ -5,6 +5,8 @@ import SigninSignupWrap from '../components/signin-signup'
 import { Link, useHistory } from 'react-router-dom'
 import { auth, storeNewUser } from '../firebase/firebase.utils'
 import Spinner from '../components/spinner'
+import { useDispatch } from 'react-redux'
+import { fetchCart } from '../redux/cart/cart.action'
 
 function SignupPage() {
     /**
@@ -19,6 +21,7 @@ function SignupPage() {
     const [data, setData] = useState(initData)
     const [load, setLoad] = useState(false)
     const history = useHistory()
+    const dispatch = useDispatch()
 
     /**
      * FUNCTION SECTION 
@@ -39,6 +42,7 @@ function SignupPage() {
         try {
             const { user } = await auth.createUserWithEmailAndPassword(email, password)
             await storeNewUser({ ...user, displayName: data.displayName })
+            dispatch(fetchCart(user))
             setData(initData)
             setLoad(false)
             history.push("/")

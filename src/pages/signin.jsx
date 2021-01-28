@@ -7,6 +7,7 @@ import { auth, googleSignin, storeNewUser } from '../firebase/firebase.utils'
 import Spinner from '../components/spinner'
 import { useDispatch } from 'react-redux'
 import { setCurrentUser } from '../redux/user/user.action'
+import { fetchCart } from '../redux/cart/cart.action'
 
 function SigninPage() {
     /**
@@ -35,6 +36,7 @@ function SigninPage() {
         setLoad(true)
         try {
             const { user } = await auth.signInWithEmailAndPassword(email, password)
+            dispatch(fetchCart(user))
             dispatch(setCurrentUser(user))
             setData(initData)
             setLoad(false)
@@ -55,6 +57,7 @@ function SigninPage() {
         try {
             const { user } = await googleSignin()
             await storeNewUser(user)
+            dispatch(fetchCart(user))
             dispatch(setCurrentUser(user))
             setData(initData)
             setLoad(false)

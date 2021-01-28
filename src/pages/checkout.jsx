@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import Button from '../components/button'
 import CheckoutItem from '../components/checkout-item'
+import EmptyItem from '../components/empty-item'
 import Spinner from '../components/spinner'
 import { cartState, selectCartQuantity, selectTotalPrice } from '../redux/cart/cart.selector'
 
@@ -13,14 +14,14 @@ function Checkout() {
     const arr = Array(5).fill('a')
     return (
         <div className="inner-container">
-            <div className="fluid-container">
+            <div className="checkout-container">
                 <h1>Your Cart</h1>
                 <div className="checkout-list">
                     {load ? <Spinner></Spinner> : null}
                     {
-                        cartItems.map((item, idx) => {
+                        cartItems.length > 0 ? cartItems.map((item, idx) => {
                             return <CheckoutItem key={idx} item={item}></CheckoutItem>
-                        })
+                        }) : <EmptyItem></EmptyItem>
                     }
                 </div>
                 <div className="checkout-total">

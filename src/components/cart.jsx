@@ -7,6 +7,7 @@ import { ReactComponent as CloseIcon } from '../assets/close.svg';
 import CartItem from './cart-item'
 import { Link } from 'react-router-dom'
 import { userState } from '../redux/user/user.selector'
+import EmptyItem from './empty-item'
 
 function Cart() {
     const { hidden, cartItems, err_msg } = useSelector(cartState)
@@ -34,10 +35,9 @@ function Cart() {
                     </div>
                 </div>
                 {
-                    cartItems.map((item, idx) => {
+                    cartItems.length > 0 ? cartItems.map((item, idx) => {
                         return <CartItem key={idx} item={item}></CartItem>
-
-                    })
+                    }) : <EmptyItem></EmptyItem>
                 }
             </div>
 

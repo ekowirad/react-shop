@@ -1,0 +1,16 @@
+.empty-container{
+    height: 30vh;
+    border-radius: $radius-8;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    & > h1 {
+        font-size: $text-36;
+        font-weight: 300;
+        color: lightgray;
+        margin-left: $space-16;
+    }
+}

@@ -14,21 +14,6 @@ function ProductItem({ data }) {
     const match = useRouteMatch()
     const goTo = `${match.path}/${data.routeName}`
 
-    const items = [
-        {
-            id: 1,
-            name: 'Brown Brim',
-            imageUrl: 'https://i.ibb.co/ZYW3VTp/brown-brim.png',
-            price: 25
-        },
-        {
-            id: 2,
-            name: 'Blue Beanie',
-            imageUrl: 'https://i.ibb.co/ypkgK0X/blue-beanie.png',
-            price: 18
-        }
-    ]
-
     // useEffect(() => {
     //     dispatch(fetchCart(currentUser))
     // }, [])
@@ -39,6 +24,8 @@ function ProductItem({ data }) {
                 dispatch(increaseItem(currentUser, item)).then(() => {
                     dispatch(fetchCart(currentUser))
                 })
+            }else{
+                history.push('/signin')
             }
         }
     }

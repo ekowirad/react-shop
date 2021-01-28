@@ -17,10 +17,10 @@ export default function Header() {
             name: "Shop",
             path: "/shop"
         },
-        {
-            name: "Contact",
-            path: "/contact"
-        },
+        // {
+        //     name: "Contact",
+        //     path: "/contact"
+        // },
     ]
     const { currentUser } = useSelector(userState)
     const dispatch = useDispatch()
