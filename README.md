@@ -7,3 +7,9 @@ This is my personal project to create a simple e-commerce using reactjs framewor
 2. yarn install
 3. yarn start
 4. destroy the code
+
+## Features
+1. user sign in
+2. user sign up
+3. cart management
+4. product showcase
